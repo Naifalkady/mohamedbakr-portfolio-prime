@@ -8,7 +8,7 @@ export function VideoPlaceholder({
 }: {
   poster: string;
   title: string;
-  videoUrl?: string;
+  videoUrl?: string | undefined;
 }) {
   const [open, setOpen] = useState(false);
 
