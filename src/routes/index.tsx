@@ -123,17 +123,19 @@ function Home() {
         />
         <div className="mt-10 grid grid-cols-1 gap-10 md:mt-16 md:grid-cols-12 md:gap-8">
           {featuredProjects.map((p, i) => {
-            const span = [7, 5, 5, 7, 6, 6][i] ?? 6;
-            const shape = [1, 2].includes(i) ? "tall" : "wide";
+            const spans = [
+              "md:col-span-7",
+              "md:col-span-5",
+              "md:col-span-5",
+              "md:col-span-7",
+              "md:col-span-6",
+              "md:col-span-6",
+            ];
+            const shape: "tall" | "wide" = i === 1 || i === 2 ? "tall" : "wide";
             const offset = i % 2 === 1 ? "md:pt-16" : "";
             return (
-              <div key={p.id} className={`md:col-span-${span} ${offset}`}>
-                <ProjectCard
-                  project={p}
-                  shape={shape as "tall" | "wide"}
-                  index={i}
-                  priority={i < 2}
-                />
+              <div key={p.id} className={`${spans[i] ?? "md:col-span-6"} ${offset}`}>
+                <ProjectCard project={p} shape={shape} index={i} priority={i < 2} />
               </div>
             );
           })}
