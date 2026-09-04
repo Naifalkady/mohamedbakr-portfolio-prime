@@ -179,18 +179,13 @@ function ContactPage() {
                       </label>
                       <input id="company" placeholder="Production company" className={fieldClass} />
                     </div>
-                    <div>
-                      <label htmlFor="type" className="label-cine">
-                        PROJECT TYPE
-                      </label>
-                      <select id="type" defaultValue={projectTypes[0]} className={fieldClass}>
-                        {projectTypes.map((t) => (
-                          <option key={t} value={t} className="bg-background">
-                            {t}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                    <CineSelect
+                      id="type"
+                      label="PROJECT TYPE"
+                      options={projectTypes}
+                      value={projectType}
+                      onChange={setProjectType}
+                    />
                   </div>
                   <div>
                     <label htmlFor="message" className="label-cine">
