@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Reveal } from "@/components/SectionTitle";
+import { CineSelect } from "@/components/CineSelect";
 import { site } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
