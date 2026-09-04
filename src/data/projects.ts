@@ -294,13 +294,14 @@ export const projects: Project[] = seeds.map((s) => ({
 
 export const featuredProjects = projects.filter((p) => p.featured).slice(0, 6);
 
-export const categories = ["ALL", "COMMERCIALS", "FILMS", "TV SERIES"] as const;
+export const categories = ["ALL", "COMMERCIALS", "FILMS", "TV SERIES", "DOCUMENTARY"] as const;
 export type CategoryFilter = (typeof categories)[number];
 
 const filterMap: Record<Exclude<CategoryFilter, "ALL">, Category> = {
   COMMERCIALS: "Commercial",
   FILMS: "Film",
   "TV SERIES": "TV Series",
+  DOCUMENTARY: "Documentary",
 };
 
 export const filterProjects = (filter: CategoryFilter): Project[] =>
