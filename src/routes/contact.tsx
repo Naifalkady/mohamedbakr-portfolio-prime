@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Reveal } from "@/components/SectionTitle";
+import { CineSelect } from "@/components/CineSelect";
 import { site } from "@/data/site";
 
 export const Route = createFileRoute("/contact")({
@@ -23,7 +24,14 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const projectTypes = ["COMMERCIAL", "FILM", "TV SERIES", "MUSIC VIDEO", "OTHER"];
+const projectTypes = [
+  "COMMERCIAL",
+  "FILM",
+  "TV SERIES",
+  "DOCUMENTARY",
+  "MUSIC VIDEO",
+  "OTHER",
+];
 
 const fieldClass =
   "w-full border-b border-input bg-transparent py-4 text-base tracking-wide text-foreground outline-none transition-colors duration-300 placeholder:text-muted-foreground/60 focus:border-foreground";
@@ -31,6 +39,7 @@ const fieldClass =
 function ContactPage() {
   const [sent, setSent] = useState(false);
   const [name, setName] = useState("");
+  const [projectType, setProjectType] = useState(projectTypes[0]!);
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -171,18 +180,13 @@ function ContactPage() {
                       </label>
                       <input id="company" placeholder="Production company" className={fieldClass} />
                     </div>
-                    <div>
-                      <label htmlFor="type" className="label-cine">
-                        PROJECT TYPE
-                      </label>
-                      <select id="type" defaultValue={projectTypes[0]} className={fieldClass}>
-                        {projectTypes.map((t) => (
-                          <option key={t} value={t} className="bg-background">
-                            {t}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
+                    <CineSelect
+                      id="type"
+                      label="PROJECT TYPE"
+                      options={projectTypes}
+                      value={projectType}
+                      onChange={setProjectType}
+                    />
                   </div>
                   <div>
                     <label htmlFor="message" className="label-cine">
