@@ -3,7 +3,7 @@
  * Swap the `img()` placeholder URLs for real stills later — nothing else changes.
  */
 
-export type Category = "Commercial" | "Film" | "TV Series";
+export type Category = "Commercial" | "Film" | "TV Series" | "Documentary";
 
 export interface Project {
   id: string;
