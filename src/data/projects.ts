@@ -236,6 +236,42 @@ const seeds: Seed[] = [
       "A road film photographed from inside the car for two thirds of its running time. Rigs were built to keep the camera at eye height so the landscape passes as memory rather than scenery.",
     seed: "cine-northbound",
   },
+  {
+    id: "sandlines",
+    title: "SANDLINES",
+    category: "Documentary",
+    year: "2025",
+    client: "Meridian Docs",
+    director: "Nour El Rashid",
+    production: "DUNE HOUSE",
+    description:
+      "A feature documentary following three families who move with the seasons. Photographed entirely handheld on available light, with a small kit carried on foot so the camera could stay inside the group rather than observe it.",
+    seed: "cine-sandlines",
+  },
+  {
+    id: "the-makers",
+    title: "THE MAKERS",
+    category: "Documentary",
+    year: "2024",
+    client: "Atlas Network",
+    director: "Omar Sabry",
+    production: "ATLAS ORIGINALS",
+    description:
+      "A portrait series about craftspeople working in old workshops. Each subject was lit only by their own working light, and the camera never moved during an interview — the hands do all the movement.",
+    seed: "cine-makers",
+  },
+  {
+    id: "river-year",
+    title: "RIVER YEAR",
+    category: "Documentary",
+    year: "2022",
+    client: "Independent",
+    director: "Hana Farouk",
+    production: "SALT & SMOKE",
+    description:
+      "Twelve months on one stretch of water, returned to at the same hour each month. The repetition built a visual calendar: the same frame, a different climate, a different community around it.",
+    seed: "cine-riveryear",
+  },
 ];
 
 export const projects: Project[] = seeds.map((s) => ({
