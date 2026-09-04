@@ -23,7 +23,14 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const projectTypes = ["COMMERCIAL", "FILM", "TV SERIES", "MUSIC VIDEO", "OTHER"];
+const projectTypes = [
+  "COMMERCIAL",
+  "FILM",
+  "TV SERIES",
+  "DOCUMENTARY",
+  "MUSIC VIDEO",
+  "OTHER",
+];
 
 const fieldClass =
   "w-full border-b border-input bg-transparent py-4 text-base tracking-wide text-foreground outline-none transition-colors duration-300 placeholder:text-muted-foreground/60 focus:border-foreground";
@@ -31,6 +38,7 @@ const fieldClass =
 function ContactPage() {
   const [sent, setSent] = useState(false);
   const [name, setName] = useState("");
+  const [projectType, setProjectType] = useState(projectTypes[0]!);
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
